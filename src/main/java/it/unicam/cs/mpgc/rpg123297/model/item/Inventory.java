@@ -67,6 +67,15 @@ public class Inventory {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Restituisce tutti gli oggetti di una certa rarità.
+     */
+    public List<Item> getItemsByRarity(ItemRarity rarity) {
+        return items.stream()
+                .filter(i -> i.getRarity() == rarity)
+                .collect(Collectors.toList());
+    }
+
     /** Restituisce una lista non modificabile di tutti gli oggetti. */
     public List<Item> getAllItems() {
         return Collections.unmodifiableList(items);

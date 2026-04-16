@@ -18,4 +18,6 @@ public interface Item {
     /** Restituisce il valore in oro dell'oggetto. */
     int getValue();
 
+    /** Restituisce la rarità dell'oggetto. */
+    ItemRarity getRarity();
 }
