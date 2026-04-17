@@ -59,16 +59,16 @@ public class Consumable extends AbstractItem {
                 yield String.format("%s cura %d HP.", getName(), effectValue);
             }
             case DAMAGE_BOOST -> {
-                target.getStats().increase(
-                        it.unicam.cs.mpgc.rpg123297.model.character.CharacterStats.StatType.STRENGTH,
-                        effectValue);
-                yield String.format("%s aumenta la Forza di %d.", getName(), effectValue);
+                if (target instanceof it.unicam.cs.mpgc.rpg123297.model.character.AbstractCharacter ac) {
+                    ac.addTempAttackBoost(effectValue);
+                }
+                yield String.format("%s aumenta l'Attacco di %d per questo combattimento.", getName(), effectValue);
             }
             case DEFENSE_BOOST -> {
-                target.getStats().increase(
-                        it.unicam.cs.mpgc.rpg123297.model.character.CharacterStats.StatType.ENDURANCE,
-                        effectValue);
-                yield String.format("%s aumenta la Resistenza di %d.", getName(), effectValue);
+                if (target instanceof it.unicam.cs.mpgc.rpg123297.model.character.AbstractCharacter ac) {
+                    ac.addTempDefenseBoost(effectValue);
+                }
+                yield String.format("%s aumenta la Difesa di %d per questo combattimento.", getName(), effectValue);
             }
         };
     }

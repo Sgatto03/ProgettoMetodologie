@@ -16,6 +16,8 @@ public abstract class AbstractCharacter implements GameCharacter {
 
     private int currentHp;
     private boolean defending;
+    private int tempAttackBoost; // buff temporaneo attacco (solo per il combattimento corrente)
+    private int tempDefenseBoost; // buff temporaneo difesa (solo per il combattimento corrente)
 
     /**
      * Crea un nuovo personaggio con nome e statistiche date.
@@ -26,6 +28,8 @@ public abstract class AbstractCharacter implements GameCharacter {
         this.equipment = new Equipment();
         this.currentHp = stats.calculateMaxHp();
         this.defending = false;
+        this.tempAttackBoost = 0;
+        this.tempDefenseBoost = 0;
     }
 
     @Override
@@ -91,18 +95,34 @@ public abstract class AbstractCharacter implements GameCharacter {
     public int calculateAttackDamage() {
         int baseDamage = stats.getStrength() * 2;
         int weaponDamage = equipment.getTotalAttackBonus();
-        return baseDamage + weaponDamage;
+        return baseDamage + weaponDamage + tempAttackBoost;
     }
 
     @Override
     public int calculateDefense() {
-        return stats.getEndurance() + equipment.getTotalDefenseBonus();
+        return stats.getEndurance() + equipment.getTotalDefenseBonus() + tempDefenseBoost;
     }
 
     @Override
     public void resetForCombat() {
         this.currentHp = getMaxHp();
         this.defending = false;
+        this.tempAttackBoost = 0;
+        this.tempDefenseBoost = 0;
+    }
+
+    /**
+     * Applica un buff temporaneo all'attacco (dura solo il combattimento corrente).
+     */
+    public void addTempAttackBoost(int amount) {
+        this.tempAttackBoost += amount;
+    }
+
+    /**
+     * Applica un buff temporaneo alla difesa (dura solo il combattimento corrente).
+     */
+    public void addTempDefenseBoost(int amount) {
+        this.tempDefenseBoost += amount;
     }
 
     /**
