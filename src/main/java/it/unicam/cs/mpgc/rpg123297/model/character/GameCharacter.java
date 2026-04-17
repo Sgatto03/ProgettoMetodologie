@@ -1,5 +1,7 @@
 package it.unicam.cs.mpgc.rpg123297.model.character;
 
+import it.unicam.cs.mpgc.rpg123297.model.item.Equipment;
+
 /**
  * Contratto base per tutti i personaggi del gioco (giocatore e nemici).
  * Definisce le operazioni fondamentali che ogni personaggio deve supportare.
@@ -9,11 +11,17 @@ public interface GameCharacter {
     /** Restituisce il nome del personaggio. */
     String getName();
 
+    /** Restituisce le statistiche correnti del personaggio. */
+    CharacterStats getStats();
+
     /** Restituisce i punti vita correnti. */
     int getCurrentHp();
 
     /** Restituisce i punti vita massimi. */
     int getMaxHp();
+
+    /** Restituisce l'equipaggiamento del personaggio. */
+    Equipment getEquipment();
 
     /** Verifica se il personaggio è ancora in vita. */
     boolean isAlive();
