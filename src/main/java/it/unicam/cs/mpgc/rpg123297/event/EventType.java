@@ -32,4 +32,10 @@ public enum EventType {
 
     // --- Generico ---
     MESSAGE
+
+    /*
+     * --- Da aggiungere eventi casuali fuori dall'arena ---
+     * --- Da basare su percentuali legate alle statistiche del gladiatore ---
+     * --- Da basare su scelte tra due opzioni ---
+     */
 }
