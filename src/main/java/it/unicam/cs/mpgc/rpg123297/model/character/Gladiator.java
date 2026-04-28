@@ -19,6 +19,7 @@ public class Gladiator extends AbstractCharacter {
     private int gold;
     private int fame;
     private int unspentStatPoints; // punti statistica da assegnare (2 per level-up)
+    private int divineVictories; // vittorie nell'Arena degli Dei (10 = libertà)
     private int specialCooldown; // turni rimanenti prima di poter riusare l'abilità speciale
 
     /**
@@ -36,6 +37,7 @@ public class Gladiator extends AbstractCharacter {
         this.gold = 50; // oro iniziale
         this.fame = 0;
         this.unspentStatPoints = 0;
+        this.divineVictories = 0;
         this.specialCooldown = 0;
     }
 
@@ -65,6 +67,10 @@ public class Gladiator extends AbstractCharacter {
 
     public int getUnspentStatPoints() {
         return unspentStatPoints;
+    }
+
+    public int getDivineVictories() {
+        return divineVictories;
     }
 
     public int getSpecialCooldown() {
@@ -98,6 +104,21 @@ public class Gladiator extends AbstractCharacter {
     /** Aggiunge oro al gladiatore. */
     public void addGold(int amount) {
         this.gold += amount;
+    }
+
+    /** Imposta le vittorie divine (usato per il caricamento dei salvataggi). */
+    public void setDivineVictories(int count) {
+        this.divineVictories = count;
+    }
+
+    /** Incrementa il contatore delle vittorie nell'Arena degli Dei. */
+    public void addDivineVictory() {
+        this.divineVictories++;
+    }
+
+    /** Verifica se il gladiatore ha raggiunto la libertà (10 vittorie divine). */
+    public boolean hasEarnedFreedom() {
+        return divineVictories >= 10;
     }
 
     /**
