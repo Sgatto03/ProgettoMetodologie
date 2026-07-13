@@ -25,7 +25,7 @@ Un gioco di ruolo in Java incentrato sulla carriera di un gladiatore che combatt
 ## 🚀 Come Eseguire
 
 ### Prerequisiti
-- **Java 21** (o superiore)
+- **Java 25** 
 - **Gradle** (il wrapper è incluso nel progetto)
 
 ### Compilazione e Avvio
