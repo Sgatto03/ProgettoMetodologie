@@ -157,13 +157,18 @@ L'architettura è progettata per supportare future estensioni senza modificare i
 
 ---
 
----
-
 ## 📝 Dichiarazione sull'uso di strumenti AI
 
-Nella realizzazione di questo progetto sono stati utilizzati strumenti di intelligenza artificiale (GitHub Copilot / Gemini) 
-- Come supporto alla scrittura del codice atraverso esempi che poi sono stati adattati e implementati dallo studente.
-- Come supporto alla documentazione revisionata e corretta dallo studente.
-- Per la realizazione del comportamento dei nemici in base all'arena di apparteneza.
+Nella realizzazione di questo progetto sono stati utilizzati strumenti di intelligenza artificiale (Gemini / Claude) 
 
+### Gemini è stato utilizzato:
+- come aiuto alla pianificazione su cosa creare e le metodologie migliori per implementarlo
+- Come supporto alla documentazione revisionata e corretta dallo studente.
+- Per testing e coerenza con le direttive date.
+
+### Claude è stato utilizzato:
+- Per la realizazione del comportamento dei nemici in base all'arena di apparteneza.
+- Come supporto alla scrittura del codice atraverso esempi che poi sono stati adattati e implementati dallo studente.
+- Come supporto alla realizazione dell'interfaccia grafica tramite JavaFX
+  
 Tutto il codice è stato revisionato e validato dallo studente.
